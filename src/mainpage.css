@@ -1,0 +1,24 @@
+.flex-header{
+  display:flex;
+  flex-wrap: nowrap;
+}
+
+.back-button {
+  background-color: #290a53;
+  color: #aacefa;
+  border: solid 2px transparent;
+  border-radius: 8px;
+  transition: 0.5s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+.back-button:hover{
+  background-color: transparent;
+  color: #290a53;
+  border: solid 2px #290a53;
+}
+

@@ -1,0 +1,43 @@
+.welcome-text{
+  color:#290a53;
+}
+
+.username-box {
+  background-color: transparent;
+  border: 0px;
+  padding: 5px;
+  border-bottom: dashed 2px #290a53;
+  text-align: center;
+  color: #290a53;
+}
+
+.username-box:focus{
+  outline: none;
+}
+
+.username-box::placeholder {
+  color: #290a53;
+  opacity:0.4;
+}
+
+.username-box:focus::placeholder {
+  color: transparent;
+}
+
+.username-button{
+  background-color: #290a53;
+  color: #aacefa;
+  border: solid 2px transparent;
+  border-radius: 8px;
+  transition: 0.5s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.username-button:hover{
+  background-color: transparent;
+  color: #290a53;
+  border: solid 2px #290a53;
+}
