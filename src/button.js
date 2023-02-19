@@ -15,10 +15,12 @@ export default class Button extends React.Component{
   handleClick=()=>{
     let currState = this.props.tracked
     
-    if (currState === 0 || currState === 2){
+    if (currState === 0){
       currState = 1;
     } else if (currState === 1){
       currState = 2;
+    } else if (currState === 2){
+      currState = 0;
     }
     this.props.updateTracker(this.props.index, currState)
   }
@@ -34,9 +36,7 @@ export default class Button extends React.Component{
     }
 
     return(
-      <div>
-        <button className = {buttonClass} onClick = {this.handleClick}>{this.props.day}</button>
-      </div>
+      <button className = {buttonClass} onClick = {this.handleClick}>{this.props.day}</button>
     )
   }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Clock from "./clock"; 
 import './mainpage.css'
 import HabitList from "./habitlist";
+import SillyQuote from "./sillyquote";
 
 export default class MainPage extends React.Component{
   constructor(props){
@@ -15,15 +16,18 @@ export default class MainPage extends React.Component{
         <div>
           <button className = 'back-button' onClick={this.props.handleEnter}>Back</button>
         </div>
-      </header>
-        <div className = 'flex-clock'>
+                <div className = 'flex-clock'>
           <Clock />
         </div>
-
-      <p>Welcome, {this.props.name}</p>
-      <div className = "habit-list">
-        <HabitList />
+      </header>
+      <div>
+      <h2 className = "habit-tracker-text">Habit Tracker</h2>
+      <p className = "welcome-text">Welcome, {this.props.name}.</p>
+        <div>
+          <HabitList />
+        </div>
       </div>
+      <SillyQuote className="silly-quote-flex"/>
     </div>
     )
   }

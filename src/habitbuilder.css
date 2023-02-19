@@ -1,6 +1,27 @@
 .habit-builder{
   display:flex;
   flex-wrap: wrap;
-  justify-content: center;
-  background-color: transparent;
+  justify-content: flex-start;
+  min-width: 70vw;
+  margin: 0px 0px 25px 0px;
+}
+
+.new-habit-input{
+  border: 0px;
+  background-color: #ffebeb;
+  border-radius: 5px;
+  margin: 0px 7px 0px 0px;
+  padding: 5px;
+  min-width: 40vw;
+  font-size: 18px;
+  color:#290a53;
+}
+
+.new-habit-input:focus{
+  outline: none;
+}
+
+.new-habit-input::placeholder {
+  color: #290a53;
+  opacity:0.6;
 }

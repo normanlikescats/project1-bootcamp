@@ -1,21 +1,42 @@
 .tracker-button-default {
-  background-color: rgb(175, 175, 175);
-  color: rgb(33, 33, 33);
-  height: 30px;
-  width: 30px;
+  background-color: rgb(133, 133, 133);
+  color:#290a53;
+  border:solid transparent 3px;
+  margin: 4px;
+  border-radius: 3px;
+  display: flex;
+  flex: auto;
+  font-weight: bold;
+  justify-content: center;
 }
 
 .tracker-button-true {
-  background-color: rgb(103, 213, 103);
-  color: rgb(33, 33, 33);
-  height: 30px;
-  width: 30px;
+  background-color: rgb(72, 202, 72);
+  color:#290a53;
+  border:solid transparent 3px;
+  margin: 4px;
+  border-radius: 3px;
+  display: flex;
+  flex: auto;
+  font-weight: bold;
+  justify-content: center;
 }
 
 
 .tracker-button-false {
   background-color: rgb(213, 103, 103);
-  color: rgb(33, 33, 33);
-  height: 30px;
-  width: 30px;
+  color:#290a53;
+  border:solid transparent 3px;
+  margin: 4px;
+  border-radius: 3px;
+  font-weight: bold;
+  display: flex;
+  flex: auto;
+  justify-content: center;
+}
+
+.tracker-button-false:hover,
+.tracker-button-default:hover,
+.tracker-button-true:hover {
+  border: solid #aacefa 3px;
 }

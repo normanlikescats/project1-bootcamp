@@ -40,15 +40,23 @@ export default class HabitList extends React.Component{
     this.setState({habits: newHabitsArray});
   }
 
+  deleteHabit=(key)=>{
+    let index = this.state.habits.findIndex((habit)=> habit.id === key);
+
+    let newHabitsArray  = [...this.state.habits];
+    newHabitsArray.splice(index, 1);
+    this.setState({habits: newHabitsArray});
+  }
 
   render(){
+    let currID = this.state.habits.length
+
     return(
       <div>
-        <h2>Habit Trackoooor</h2>
-        <HabitBuilder addNewHabit={this.addNewHabit} habitListLength = {this.state.habits.length}/>
+        <HabitBuilder addNewHabit={this.addNewHabit} id = {currID}/>
         {(this.state.habits) && this.state.habits.length > 0 ? this.state.habits.map((habit)=>(
-          <Habit key = {habit.id} {...habit} updateTracker = {this.updateTracker}/>
-        )) : <p>No Habit Yet!</p>}
+          <Habit key = {habit.id} {...habit} updateTracker = {this.updateTracker} deleteHabit = {this.deleteHabit}/>
+        )) : <h3 style= {{color: "#290a53"}}>No habits yet. Add one today!</h3>}
       </div>
     )
   }

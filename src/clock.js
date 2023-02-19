@@ -6,7 +6,7 @@ export default class Clock extends React.Component{
     super(props)
     
     this.state={
-      time: new Date()
+      time: new Date(),
     }
   }
 
@@ -25,11 +25,15 @@ export default class Clock extends React.Component{
   }
 
   render(){
+    let months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+    let formatted_date = this.state.time.getDate() + " " + months[this.state.time.getMonth()] + " " + this.state.time.getFullYear() + ", " + days[this.state.time.getDay()]
+
     return (
       <>
-        <div className="flex-container">
-        <h6 className="clock">{this.state.time.toLocaleTimeString()}</h6>
-        <h6 className="clock">{this.state.time.toLocaleDateString()}</h6>
+        <div className="flexy-clock">
+          <h6 className="clock">{formatted_date}</h6>
+          <h6 className="clock">{this.state.time.toLocaleTimeString()}</h6>
         </div>
       </>
     )

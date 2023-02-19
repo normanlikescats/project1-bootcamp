@@ -1,5 +1,6 @@
 import React from 'react';
 import "./loginpage.css";
+import SillyQuote from './sillyquote';
 
 export default class LoginPage extends React.Component{
   constructor(props){
@@ -40,6 +41,4 @@ export default class LoginPage extends React.Component{
       </div>
     )
   }
-
-
 }

@@ -1,17 +1,43 @@
 .habit-flex{
-  background-color: #290a53;
+  background-color: rgb(41, 10, 83, 0.88);
   color: #aacefa;
-  margin: 10px;
-  border-radius: 5px;
+  margin: 10px 0px 10px 0px;
+  padding: 0px;
+  border-radius: 15px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  min-width: 70vw;
+  min-width: 80vw;
+  max-height: max-content;
 }
 
-.flex-boxes{
+.flex-bubbles{
   display: flex;
-  padding: 10px;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 0px 30px 20px 30px;
+}
+
+.delete-button{
+  color: #aacefa;
+  background-color: transparent;
+  border: 0px;
+  font-size: 20px;
+  padding: 10px 0px 0px 0px;
+  align-self:self-start;
+}
+
+.delete-button:hover{
+  color: #f07c7c;
+}
+
+.habit-box-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 30px 10px 30px;
+}
+
+.habit-header{
+  margin: 20px 0px 10px 0px;
 }

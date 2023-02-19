@@ -2,17 +2,40 @@
   text-align: center;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #3b0e6e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #59c3ec;
+  max-height: 20px;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f88b1;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #59c3ec #3b0e6e;
+}
+
 .App-header {
-  background-color: #fffee1;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(30, 30, 30);
   background-image: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
   background-repeat: no-repeat;
   background-size:cover;
 }
+
+
 

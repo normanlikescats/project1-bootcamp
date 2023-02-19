@@ -2,9 +2,11 @@
   color: #290a53;
   padding:0px;
   margin:0px;
+  display: flex;
+  justify-content: right;
 }
 
-.flex-container{
+.flexy-clock{
   display:flex;
   flex-direction: column;
   justify-content: right;

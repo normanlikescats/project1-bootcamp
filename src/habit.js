@@ -7,7 +7,7 @@ export default class Habit extends React.Component{
     super(props)
 
     this.state={
-      key:(props),
+      id:(props),
       tracker:(props)
     }
   }
@@ -17,14 +17,19 @@ export default class Habit extends React.Component{
     newArray[index]= currState;
     this.props.updateTracker(this.props.id, newArray)
   }
+
+  deleteHabit=()=>{
+    this.props.deleteHabit(this.props.id)
+  }
   
   render(){
     return(
       <div className = "habit-flex">
-        <div>
-          <h4>Habit: {this.props.habit}</h4>
+        <div className = "habit-box-flex">
+          <h4 className="habit-header">Habit: {this.props.habit}</h4>
+          <button className = "delete-button" onClick={this.deleteHabit}>✖</button>
         </div>
-        <div className = "flex-boxes">
+        <div className = "flex-bubbles">
           <Button index = '0' day = 'S' tracked = {this.props.tracker[0]} updateTracker = {this.updateTracker}/>
           <Button index = '1'day = 'M' tracked = {this.props.tracker[1]} updateTracker = {this.updateTracker}/>
           <Button index = '2'day = 'T' tracked = {this.props.tracker[2]} updateTracker = {this.updateTracker}/>
