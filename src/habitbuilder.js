@@ -1,4 +1,5 @@
 import React from 'react';
+import "./habitbuilder.css";
 
 export default class HabitBuilder extends React.Component{
   constructor(props){
@@ -30,9 +31,8 @@ export default class HabitBuilder extends React.Component{
   }
 
   render(){
-    console.log(this.state.habit)
     return(
-      <div>
+      <div className= "habit-builder">
         <input type="text" value={this.state.habit} placeholder = "Enter a new habit!" onChange={this.handleChange}/>
         <input className = 'username-button' type='submit' name = "submit" value = "Let's go!" onClick={this.handleSubmit}/>
       </div>

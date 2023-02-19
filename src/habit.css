@@ -1,7 +1,17 @@
-.habit-box{
+.habit-flex{
   background-color: #290a53;
   color: #aacefa;
-  padding: 1px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 70vw;
+}
+
+.flex-boxes{
+  display: flex;
+  padding: 10px;
+  justify-content: space-evenly;
 }

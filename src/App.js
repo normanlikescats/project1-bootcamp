@@ -32,8 +32,6 @@ class App extends React.Component {
     } else if(currPageState === 2){
       currPageState = 1;
     }
-    console.log('this ran')
-    console.log(currPageState)
 
     this.setState({
       name: userName,

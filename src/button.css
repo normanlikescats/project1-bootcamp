@@ -1,4 +1,11 @@
-.tracker-button {
+.tracker-button-default {
+  background-color: rgb(175, 175, 175);
+  color: rgb(33, 33, 33);
+  height: 30px;
+  width: 30px;
+}
+
+.tracker-button-true {
   background-color: rgb(103, 213, 103);
   color: rgb(33, 33, 33);
   height: 30px;

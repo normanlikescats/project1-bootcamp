@@ -11,12 +11,12 @@ export default class HabitList extends React.Component{
         {
           id: 0,
           habit: 'Exercise Daily',
-          tracker: [0,0,0,0,0,0,0]
+          tracker: [0,1,0,0,1,0,0]
         },
         {
           id: 1,
           habit: 'Sleep at 11pm',
-          tracker: [0,0,0,0,0,0,0]
+          tracker: [0,1,0,1,1,0,0]
         }
       ],
     }
@@ -29,6 +29,17 @@ export default class HabitList extends React.Component{
     });
   }
 
+  updateTracker=(key, newArray)=>{
+    let index = this.state.habits.findIndex((habit)=> habit.id === key);
+    let habit = this.state.habits.filter((habit)=> habit.id === key)[0];
+
+    habit.tracker = newArray;
+
+    let newHabitsArray  = [...this.state.habits];
+    newHabitsArray.splice(index, 1, habit);
+    this.setState({habits: newHabitsArray});
+  }
+
 
   render(){
     return(
@@ -36,7 +47,7 @@ export default class HabitList extends React.Component{
         <h2>Habit Trackoooor</h2>
         <HabitBuilder addNewHabit={this.addNewHabit} habitListLength = {this.state.habits.length}/>
         {(this.state.habits) && this.state.habits.length > 0 ? this.state.habits.map((habit)=>(
-          <Habit key = {habit.id} {...habit}/>
+          <Habit key = {habit.id} {...habit} updateTracker = {this.updateTracker}/>
         )) : <p>No Habit Yet!</p>}
       </div>
     )

@@ -21,7 +21,7 @@ export default class MainPage extends React.Component{
         </div>
 
       <p>Welcome, {this.props.name}</p>
-      <div className = "habit-flex">
+      <div className = "habit-list">
         <HabitList />
       </div>
     </div>

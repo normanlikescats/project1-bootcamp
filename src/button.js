@@ -6,28 +6,37 @@ export default class Button extends React.Component{
     super(props)
 
     this.state={
-      tracked: true,
-      day: (props)
+      index: (props),
+      day: (props),
+      tracked: (props),
     }
   }
   
   handleClick=()=>{
-    let currState = !this.state.tracked
-      
-    this.setState({
-      tracked: currState
-    })
+    let currState = this.props.tracked
+    
+    if (currState === 0 || currState === 2){
+      currState = 1;
+    } else if (currState === 1){
+      currState = 2;
+    }
+    this.props.updateTracker(this.props.index, currState)
   }
     
   render(){
-    console.log(this.state.tracked)
+    let buttonClass = '';
+    if (this.props.tracked === 0 ){
+      buttonClass = "tracker-button-default"
+    } else if (this.props.tracked === 1){
+      buttonClass = "tracker-button-true"
+    } else {
+      buttonClass = "tracker-button-false"
+    }
+
     return(
       <div>
-        {this.state.tracked === true
-        ? <button className = "tracker-button" onClick = {this.handleClick}>{this.props.day}</button>
-        : <button className = "tracker-button-false" onClick = {this.handleClick}>{this.props.day}</button>}
+        <button className = {buttonClass} onClick = {this.handleClick}>{this.props.day}</button>
       </div>
     )
   }
-  
 }

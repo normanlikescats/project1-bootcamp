@@ -20,8 +20,13 @@ export default class LoginPage extends React.Component{
 
   handleSubmit=(e)=>{
     e.preventDefault();
-    let username = this.state.name;
-    this.props.handleName(username);
+
+    if(this.state.name === ''){
+      alert("Please enter your name :)")
+    } else{
+      let username = this.state.name;
+      this.props.handleName(username);
+    }
   }
 
   render(){
