@@ -1,3 +1,16 @@
+*::selection{
+  background-color:#290a53;
+  color: #aacefa;
+}
+
+.main-div{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .welcome-text{
   color:#290a53;
 }

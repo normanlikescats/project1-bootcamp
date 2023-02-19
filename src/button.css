@@ -1,0 +1,14 @@
+.tracker-button {
+  background-color: rgb(103, 213, 103);
+  color: rgb(33, 33, 33);
+  height: 30px;
+  width: 30px;
+}
+
+
+.tracker-button-false {
+  background-color: rgb(213, 103, 103);
+  color: rgb(33, 33, 33);
+  height: 30px;
+  width: 30px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './clock.css';
 
 export default class Clock extends React.Component{
   constructor(props){
@@ -19,10 +20,6 @@ export default class Clock extends React.Component{
     this.timerID = setInterval(()=>this.tick(), 1000)
   }
 
-  componentDidUpdate(){
-    console.log('Ticked')
-  }
-
   componentWillUnmount(){
     clearInterval(this.TimerID)
   }
@@ -30,7 +27,10 @@ export default class Clock extends React.Component{
   render(){
     return (
       <>
-        <h1>{this.state.time.toLocaleTimeString()}.</h1>
+        <div className="flex-container">
+        <h6 className="clock">{this.state.time.toLocaleTimeString()}</h6>
+        <h6 className="clock">{this.state.time.toLocaleDateString()}</h6>
+        </div>
       </>
     )
   }
