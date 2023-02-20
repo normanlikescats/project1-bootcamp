@@ -8,7 +8,9 @@ export default class Habit extends React.Component{
 
     this.state={
       id:(props),
-      tracker:(props)
+      habit: (props),
+      tracker:(props),
+      edit: false,
     }
   }
 
@@ -21,13 +23,41 @@ export default class Habit extends React.Component{
   deleteHabit=()=>{
     this.props.deleteHabit(this.props.id)
   }
+
+  editHabit=()=>{
+    this.setState({
+      edit: true,
+    })
+  }
+
+  finishEdit=()=>{
+    this.setState({
+      edit: false,
+    })
+  }
+
+  handleChange =(e)=> {
+    let editedHabit = e.target.value
+
+    this.props.editHabit(this.props.id, editedHabit)
+  }
   
   render(){
     return(
       <div className = "habit-flex">
         <div className = "habit-box-flex">
-          <h4 className="habit-header">Habit: {this.props.habit}</h4>
-          <button className = "delete-button" onClick={this.deleteHabit}>✖</button>
+          {this.state.edit === true
+          ? 
+          <form className = "habit-header">
+            <input autoFocus spellCheck = "false" className="habit-header-input" type = "text" value= {this.props.habit} onChange = {this.handleChange}/>
+          </form>
+          : <h4 className="habit-header">Habit: {this.props.habit}</h4>}
+          <div>
+            {this.state.edit === true
+            ? <button className = "edit-button" onClick={this.finishEdit}>✔</button>
+            : <button className = "edit-button" onClick={this.editHabit}>✎</button>}
+            <button className = "delete-button" onClick={this.deleteHabit}>✖</button>
+          </div>
         </div>
         <div className = "flex-bubbles">
           <Button index = '0' day = 'S' tracked = {this.props.tracker[0]} updateTracker = {this.updateTracker}/>

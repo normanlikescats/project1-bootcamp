@@ -23,8 +23,6 @@ export default class HabitBuilder extends React.Component{
   handleSubmit =(e)=> {
     e.preventDefault();
     let newHabit = this.state;
-    console.log(this.props.id)
-    console.log(this.state);
     this.props.addNewHabit(newHabit);
 
     this.setState({
@@ -36,7 +34,7 @@ export default class HabitBuilder extends React.Component{
   render(){
     return(
       <div className= "habit-builder">
-        <input className="new-habit-input" type="text" value={this.state.habit} placeholder = "Enter a new habit!" onChange={this.handleChange}/>
+        <input spellCheck = "false" className="new-habit-input" type="text" value={this.state.habit} placeholder = "Enter a new habit!" onChange={this.handleChange}/>
         <input className = 'username-button' type='submit' name = "submit" value = "Let's go!" onClick={this.handleSubmit}/>
       </div>
     )

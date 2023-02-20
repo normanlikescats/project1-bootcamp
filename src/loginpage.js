@@ -43,7 +43,7 @@ export default class LoginPage extends React.Component{
       <div className = "main-div">
         <h1 className = "welcome-text">Hello there!</h1>
         <form>
-          <input name="name" className= 'username-box' type='text' value={this.props.name} placeholder = "What is your name?" onChange = {this.handleChange}/><br/><br/>
+          <input spellCheck = "false" name="name" className= 'username-box' type='text' value={this.props.name} placeholder = "What is your name?" onChange = {this.handleChange}/><br/><br/>
           <input className = 'username-button' type='submit' name = "submit" value = "Let's go!" onClick={this.handleSubmit}/>
         </form>
       </div>

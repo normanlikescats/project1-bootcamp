@@ -1,6 +1,6 @@
 .habit-flex{
-  background-color: rgb(41, 10, 83, 0.88);
-  color: #aacefa;
+  background-color: rgba(12, 10, 83, 0.8);
+  color: #d7e9ff;
   margin: 10px 0px 10px 0px;
   padding: 0px;
   border-radius: 15px;
@@ -31,6 +31,19 @@
   color: #f07c7c;
 }
 
+.edit-button{
+  color: #aacefa;
+  background-color: transparent;
+  border: 0px;
+  font-size: 20px;
+  padding: 10px 15px 0px 0px;
+  align-self:self-start;
+}
+
+.edit-button:hover{
+  color: #3fdd57;
+}
+
 .habit-box-flex{
   display: flex;
   flex-direction: row;
@@ -40,4 +53,19 @@
 
 .habit-header{
   margin: 20px 0px 10px 0px;
+  padding: 0px;
+}
+
+.habit-header-input{
+  background-color: transparent;
+  color: #aacefa;
+  font-size:15px;
+  border: 0px;
+  border-bottom: 2px dashed #aacefa;
+  box-shadow: none;
+}
+
+.habit-header-input:focus{
+  outline: none !important;
+  border: 2px solid #aacefa;
 }
