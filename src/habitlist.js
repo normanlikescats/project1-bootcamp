@@ -7,23 +7,14 @@ export default class HabitList extends React.Component{
     super(props)
 
     this.state={
-      habits: [
-        {
-          id: 0,
-          habit: 'Exercise Daily',
-          tracker: [0,1,0,0,1,0,0]
-        },
-        {
-          id: 1,
-          habit: 'Sleep at 11pm',
-          tracker: [0,1,0,1,1,0,0]
-        }
-      ],
+      habits: JSON.parse(localStorage.getItem('habits'))
     }
   }
 
   addNewHabit=(habit)=>{
     let newArray = [...this.state.habits, habit]
+    
+    localStorage.setItem('habits', JSON.stringify(newArray));
     this.setState({
       habits: newArray,
     });
@@ -37,6 +28,7 @@ export default class HabitList extends React.Component{
 
     let newHabitsArray  = [...this.state.habits];
     newHabitsArray.splice(index, 1, habit);
+    localStorage.setItem('habits', JSON.stringify(newHabitsArray));
     this.setState({habits: newHabitsArray});
   }
 
@@ -45,12 +37,12 @@ export default class HabitList extends React.Component{
 
     let newHabitsArray  = [...this.state.habits];
     newHabitsArray.splice(index, 1);
+    localStorage.setItem('habits', JSON.stringify(newHabitsArray));
     this.setState({habits: newHabitsArray});
   }
 
   render(){
     let currID = this.state.habits.length
-
     return(
       <div>
         <HabitBuilder addNewHabit={this.addNewHabit} id = {currID}/>

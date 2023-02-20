@@ -1,6 +1,5 @@
 import React from 'react';
 import "./loginpage.css";
-import SillyQuote from './sillyquote';
 
 export default class LoginPage extends React.Component{
   constructor(props){
@@ -27,10 +26,19 @@ export default class LoginPage extends React.Component{
     } else{
       let username = this.state.name;
       this.props.handleName(username);
+      localStorage.setItem('Name', username);
+    }
+  }
+
+  componentDidMount=()=>{
+    if(localStorage.getItem('Name') != null){
+      this.props.handleName(localStorage.getItem('Name'));
     }
   }
 
   render(){
+    let name1 = localStorage.getItem('Name');
+    console.log(name1)
     return(
       <div className = "main-div">
         <h1 className = "welcome-text">Hello there!</h1>

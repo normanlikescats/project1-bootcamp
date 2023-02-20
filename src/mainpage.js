@@ -16,7 +16,7 @@ export default class MainPage extends React.Component{
         <div>
           <button className = 'back-button' onClick={this.props.handleEnter}>Back</button>
         </div>
-                <div className = 'flex-clock'>
+        <div className = 'flex-clock'>
           <Clock />
         </div>
       </header>

@@ -20,6 +20,7 @@ class App extends React.Component {
     } else if(currPageState === 2){
       currPageState = 1;
     }
+    localStorage.removeItem('Name');
     this.setState({
       pageState:currPageState,
     })

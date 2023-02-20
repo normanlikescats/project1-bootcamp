@@ -14,7 +14,6 @@ export default class SillyQuote extends React.Component{
 
   let randNum = Math.floor(Math.random()*quotes.length)
   let chosenQuote = quotes[randNum]
-  console.log(randNum)
     return(
       <div className="silly-quote-flex">
         <p>{chosenQuote}</p>
