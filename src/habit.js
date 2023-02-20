@@ -49,7 +49,7 @@ export default class Habit extends React.Component{
           {this.state.edit === true
           ? 
           <form className = "habit-header">
-            <input autoFocus spellCheck = "false" className="habit-header-input" type = "text" value= {this.props.habit} onChange = {this.handleChange}/>
+            <h4 className="habit-header-text">Habit:</h4><input autoFocus spellCheck = "false" className="habit-header-input" type = "text" value= {this.props.habit} onChange = {this.handleChange}/>
           </form>
           : <h4 className="habit-header">Habit: {this.props.habit}</h4>}
           <div>

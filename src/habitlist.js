@@ -8,7 +8,7 @@ export default class HabitList extends React.Component{
     super(props)
 
     this.state={
-      habits: JSON.parse(localStorage.getItem('habits'))
+      habits: []
     }
   }
 
@@ -55,8 +55,17 @@ export default class HabitList extends React.Component{
   }
   
 
+  componentDidMount=()=>{
+    if(JSON.parse(localStorage.getItem('habits')) != null){
+      this.setState({
+        habits: JSON.parse(localStorage.getItem('habits'))
+      })
+    }
+  }
+
   render(){
-    let currID = this.state.habits.length
+    let currID = this.state.habits.length;
+    
     return(
       <div>
         <HabitBuilder addNewHabit={this.addNewHabit} id = {currID}/>

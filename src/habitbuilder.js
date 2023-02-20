@@ -22,13 +22,21 @@ export default class HabitBuilder extends React.Component{
 
   handleSubmit =(e)=> {
     e.preventDefault();
-    let newHabit = this.state;
-    this.props.addNewHabit(newHabit);
+    if (this.state.habit === ''){
+      alert("Please enter a habit :)")
+    } else{
+      let newHabit = {
+        id:this.props.id,
+        habit: this.state.habit,
+        tracker: this.state.tracker
+      }
+      this.props.addNewHabit(newHabit);
 
-    this.setState({
-      id: this.props.id,
-      habit: '',
-    })
+      this.setState({
+        id: this.props.id,
+        habit: '',
+      })
+    }    
   }
 
   render(){

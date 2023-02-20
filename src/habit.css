@@ -52,8 +52,10 @@
 }
 
 .habit-header{
-  margin: 20px 0px 10px 0px;
+  margin: 20px 0px 0px 0px;
   padding: 0px;
+  display:flex;
+  flex-wrap: nowrap;
 }
 
 .habit-header-input{
@@ -61,12 +63,20 @@
   color: #aacefa;
   font-size:15px;
   border: 0px;
+  margin: 0px 0px 0px 6px;
+  padding:0px;
   border-bottom: 2px dashed #aacefa;
   box-shadow: none;
   border-radius: 5px;
+  align-self: center;
 }
 
 .habit-header-input:focus{
   outline: none !important;
   border: 2px solid #aacefa;
+}
+
+.habit-header-text {
+  padding:0px;
+  margin: 0px;
 }

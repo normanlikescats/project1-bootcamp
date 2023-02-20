@@ -36,9 +36,7 @@ export default class LoginPage extends React.Component{
     }
   }
 
-  render(){
-    let name1 = localStorage.getItem('Name');
-    console.log(name1)
+  render(){    
     return(
       <div className = "main-div">
         <h1 className = "welcome-text">Hello there!</h1>
