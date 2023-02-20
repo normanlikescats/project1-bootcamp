@@ -1,6 +1,7 @@
 import React from 'react';
 import HabitBuilder from './habitbuilder';
 import Habit from './habit';
+import './habitlist.css';
 
 export default class HabitList extends React.Component{
   constructor(props){
@@ -61,7 +62,7 @@ export default class HabitList extends React.Component{
         <HabitBuilder addNewHabit={this.addNewHabit} id = {currID}/>
         {(this.state.habits) && this.state.habits.length > 0 ? this.state.habits.map((habit)=>(
           <Habit key = {habit.id} {...habit} updateTracker = {this.updateTracker} deleteHabit = {this.deleteHabit} editHabit = {this.editHabit}/>
-        )) : <h3 style= {{color: "#290a53"}}>No habits yet. Add one today!</h3>}
+        )) : <h3 className="no-habits-text">No habits yet. Add one today!</h3>}
       </div>
     )
   }

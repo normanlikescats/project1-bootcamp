@@ -63,6 +63,7 @@
   border: 0px;
   border-bottom: 2px dashed #aacefa;
   box-shadow: none;
+  border-radius: 5px;
 }
 
 .habit-header-input:focus{
