@@ -7,9 +7,26 @@ import SillyQuote from "./sillyquote";
 export default class MainPage extends React.Component{
   constructor(props){
     super(props)
+
+    this.state={
+      perfectScoreStatus: false,
+    }
+  }
+  perfectScore=(currPerfectScore)=>{
+    this.setState({
+      perfectScoreStatus: currPerfectScore,
+    })
   }
 
+
   render(){
+    let encouragingMessage = ''
+    if (this.state.perfectScoreStatus === true){
+      encouragingMessage = " You're on fire, keep it up! 🔥"
+    } else {
+      encouragingMessage = " Let's get this bread! 🍞"
+    }
+
     return(
     <div>
       <header className='flex-header'>
@@ -22,9 +39,9 @@ export default class MainPage extends React.Component{
       </header>
       <div>
       <h2 className = "habit-tracker-text">Habit Tracker</h2>
-      <p className = "welcome-text">Welcome, {this.props.name}.</p>
+      <p className = "welcome-text">Welcome, {this.props.name}.{encouragingMessage}</p>
         <div>
-          <HabitList />
+          <HabitList perfectScore = {this.perfectScore} perfectScoreStatus = {this.state.perfectScoreStatus}/>
         </div>
       </div>
       <SillyQuote className="silly-quote-flex"/>

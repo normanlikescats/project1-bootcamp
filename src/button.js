@@ -23,6 +23,7 @@ export default class Button extends React.Component{
       currState = 0;
     }
     this.props.updateTracker(this.props.index, currState)
+    this.props.perfectScore();
   }
     
   render(){

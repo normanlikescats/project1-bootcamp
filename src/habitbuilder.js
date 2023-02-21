@@ -31,6 +31,7 @@ export default class HabitBuilder extends React.Component{
         tracker: this.state.tracker
       }
       this.props.addNewHabit(newHabit);
+      this.props.perfectScore();
 
       this.setState({
         id: this.props.id,

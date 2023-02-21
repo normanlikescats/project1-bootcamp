@@ -21,6 +21,7 @@ export default class Habit extends React.Component{
   }
 
   deleteHabit=()=>{
+    this.perfectScore();
     this.props.deleteHabit(this.props.id)
   }
 
@@ -38,8 +39,11 @@ export default class Habit extends React.Component{
 
   handleChange =(e)=> {
     let editedHabit = e.target.value
-
     this.props.editHabit(this.props.id, editedHabit)
+  }
+
+  perfectScore=()=>{
+    this.props.perfectScore();
   }
   
   render(){
@@ -60,13 +64,13 @@ export default class Habit extends React.Component{
           </div>
         </div>
         <div className = "flex-bubbles">
-          <Button index = '0' day = 'S' tracked = {this.props.tracker[0]} updateTracker = {this.updateTracker}/>
-          <Button index = '1'day = 'M' tracked = {this.props.tracker[1]} updateTracker = {this.updateTracker}/>
-          <Button index = '2'day = 'T' tracked = {this.props.tracker[2]} updateTracker = {this.updateTracker}/>
-          <Button index = '3'day = 'W' tracked = {this.props.tracker[3]} updateTracker = {this.updateTracker}/>
-          <Button index = '4'day = 'T' tracked = {this.props.tracker[4]} updateTracker = {this.updateTracker}/>
-          <Button index = '5'day = 'F' tracked = {this.props.tracker[5]} updateTracker = {this.updateTracker}/>
-          <Button index = '6'day = 'S' tracked = {this.props.tracker[6]} updateTracker = {this.updateTracker}/>
+          <Button index = '0' day = 'S' tracked = {this.props.tracker[0]} updateTracker = {this.updateTracker} perfectScore = {this.perfectScore}/>
+          <Button index = '1'day = 'M' tracked = {this.props.tracker[1]} updateTracker = {this.updateTracker} perfectScore = {this.perfectScore}/>
+          <Button index = '2'day = 'T' tracked = {this.props.tracker[2]} updateTracker = {this.updateTracker} perfectScore = {this.perfectScore}/>
+          <Button index = '3'day = 'W' tracked = {this.props.tracker[3]} updateTracker = {this.updateTracker} perfectScore = {this.perfectScore}/>
+          <Button index = '4'day = 'T' tracked = {this.props.tracker[4]} updateTracker = {this.updateTracker} perfectScore = {this.perfectScore}/>
+          <Button index = '5'day = 'F' tracked = {this.props.tracker[5]} updateTracker = {this.updateTracker} perfectScore = {this.perfectScore}/>
+          <Button index = '6'day = 'S' tracked = {this.props.tracker[6]} updateTracker = {this.updateTracker} perfectScore = {this.perfectScore}/>
         </div>
       </div>
     )

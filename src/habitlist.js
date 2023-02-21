@@ -8,7 +8,12 @@ export default class HabitList extends React.Component{
     super(props)
 
     this.state={
-      habits: []
+      habits: [{
+        id:0,
+        habit: 'Run Daily',
+        tracker: [0,0,1,1,1,0,0]
+      }],
+      perfectScoreStatus: (props),
     }
   }
 
@@ -63,14 +68,36 @@ export default class HabitList extends React.Component{
     }
   }
 
+  perfectScore=()=>{
+    let currPerfectScore = this.props.perfectScoreStatus;
+    let scoreTally = 0;
+    if(this.state.habits.length >0){
+      for (let j = 0; j < this.state.habits.length; j ++)
+        for (let i = 0; i < new Date().getDay(); i ++){
+          if(this.state.habits[j].tracker[i] === 1){
+            scoreTally += 1;
+        }
+      }
+    }
+    let numOfBubbles = (this.state.habits.length * new Date().getDay())
+
+    if(scoreTally === numOfBubbles && numOfBubbles > 0 ){
+      currPerfectScore = true;
+    } else {
+      currPerfectScore = false;
+    }
+
+    this.props.perfectScore(currPerfectScore);
+  }
+
+
   render(){
     let currID = this.state.habits.length;
-    
     return(
       <div>
-        <HabitBuilder addNewHabit={this.addNewHabit} id = {currID}/>
+        <HabitBuilder addNewHabit={this.addNewHabit} id = {currID} perfectScore = {this.perfectScore}/>
         {(this.state.habits) && this.state.habits.length > 0 ? this.state.habits.map((habit)=>(
-          <Habit key = {habit.id} {...habit} updateTracker = {this.updateTracker} deleteHabit = {this.deleteHabit} editHabit = {this.editHabit}/>
+          <Habit key = {habit.id} {...habit} updateTracker = {this.updateTracker} deleteHabit = {this.deleteHabit} editHabit = {this.editHabit} perfectScore={this.perfectScore}/>
         )) : <h3 className="no-habits-text">No habits yet. Add one today!</h3>}
       </div>
     )
