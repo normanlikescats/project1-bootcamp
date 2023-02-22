@@ -50,7 +50,7 @@ export default class HabitBuilder extends React.Component{
     return(
       <div className= "habit-builder">
         <input spellCheck = "false" className="new-habit-input" type="text" value={this.state.habit} placeholder = "Enter a new habit!" onChange={this.handleChange}/>
-        <input className = 'username-button' type='submit' name = "submit" value = "Let's go!" onClick={this.handleSubmit}/>
+        <input className = 'submit-button' type='submit' name = "submit" value = "Let's go!" onClick={this.handleSubmit}/>
       </div>
     )
   }

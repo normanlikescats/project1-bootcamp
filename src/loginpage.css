@@ -24,7 +24,7 @@
   text-align: center;
   color: #290a53;
   min-width: 25vw;
-  font-size: 1.2rem;
+  font-size: 4vh;
 }
 
 .username-box:focus{
@@ -33,6 +33,7 @@
 
 .username-box::placeholder {
   color: #290a53;
+  font-size: 4vh;
   opacity:0.5;
 }
 
@@ -51,7 +52,7 @@
   padding-bottom: 7px;
   padding-right: 12px;
   padding-left: 12px;
-  font-size: 3.5vh;
+  font-size: 4vh;
 }
 
 

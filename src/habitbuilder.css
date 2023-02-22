@@ -25,3 +25,23 @@
   color: #290a53;
   opacity:0.6;
 }
+
+.submit-button {
+  background-color: #290a53;
+  color: #aacefa;
+  border: solid 2px transparent;
+  border-radius: 8px;
+  transition: 0.5s;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin: 0px;
+}
+
+
+.submit-button:hover{
+  background-color: transparent;
+  color: #290a53;
+  border: solid 2px #290a53;
+}
