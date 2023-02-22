@@ -11,6 +11,7 @@ export default class SillyQuote extends React.Component{
   }
   
   componentDidMount=()=>{
+    // Creates the quotes array
     let quotes= [
         '"We become what we repeatedly do." - Sean Covey',
         '"Successful people are simply those with successful habits." - Brian Tracy',
@@ -21,8 +22,11 @@ export default class SillyQuote extends React.Component{
         `"The best way to predict the future is to create it." - Abraham Lincoln`,
         `"Habits are the compound interest of self-improvement." - James Clear`
       ];
+
+    // Selects a randaom number between 0 and the length of the array
     let randomNum = Math.floor(Math.random()*quotes.length)
     this.setState({
+      // Selects the random quote from the array
       quote: quotes[randomNum],
     })
   }

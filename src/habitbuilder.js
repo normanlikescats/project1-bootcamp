@@ -13,6 +13,7 @@ export default class HabitBuilder extends React.Component{
   }
 
   handleChange =(e)=> {
+    // Handles change in input field by user
     let newHabit = e.target.value
 
     this.setState({
@@ -23,16 +24,21 @@ export default class HabitBuilder extends React.Component{
   handleSubmit =(e)=> {
     e.preventDefault();
     if (this.state.habit === ''){
+      // Input validation to ensure that the field is not empty
       alert("Please enter a habit :)")
     } else{
+      // Declares the new habit
       let newHabit = {
         id:this.props.id,
         habit: this.state.habit,
         tracker: this.state.tracker
       }
+
+      // Adds the new habit and checks for perfectScore (which should turn it false by default)
       this.props.addNewHabit(newHabit);
       this.props.perfectScore();
 
+      // Resets habit for the next new habit
       this.setState({
         id: this.props.id,
         habit: '',

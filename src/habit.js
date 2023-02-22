@@ -15,34 +15,40 @@ export default class Habit extends React.Component{
   }
 
   updateTracker=(index, currState)=>{
+    // Updates the tracker for each habit when the bubbles are clicked using the index of the bubble
     let newArray = [...this.props.tracker]
     newArray[index]= currState;
     this.props.updateTracker(this.props.id, newArray)
   }
 
   deleteHabit=()=>{
+    // Delete habit using a method passed from the parent component, HabitList
     this.perfectScore();
     this.props.deleteHabit(this.props.id)
   }
 
   editHabit=()=>{
+    // Changes edit state to true
     this.setState({
       edit: true,
     })
   }
 
   finishEdit=()=>{
+    // Changes edit state to false
     this.setState({
       edit: false,
     })
   }
 
   handleChange =(e)=> {
+    // Edits the habit using parent method, editHabit
     let editedHabit = e.target.value
     this.props.editHabit(this.props.id, editedHabit)
   }
 
   perfectScore=()=>{
+    // Passing perfectScore method from parent to test for perfectScoreStatus
     this.props.perfectScore();
   }
   

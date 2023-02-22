@@ -12,7 +12,9 @@ export default class MainPage extends React.Component{
       perfectScoreStatus: false,
     }
   }
+
   perfectScore=(currPerfectScore)=>{
+    // Receives the currPerfectScore from HabitList component (Boolean value)
     this.setState({
       perfectScoreStatus: currPerfectScore,
     })
@@ -20,7 +22,8 @@ export default class MainPage extends React.Component{
 
 
   render(){
-    let encouragingMessage = ''
+    let encouragingMessage = '';
+    // Sets encouraging message based on the perfectScoreStatus value (obtained from Habit component)
     if (this.state.perfectScoreStatus === true){
       encouragingMessage = " You're on fire, keep it up! 🔥"
     } else {
