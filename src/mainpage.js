@@ -38,13 +38,13 @@ export default class MainPage extends React.Component{
         </div>
       </header>
       <div>
-      <h2 className = "habit-tracker-text">Habit Tracker</h2>
-      <p className = "welcome-text">Welcome, {this.props.name}.{encouragingMessage}</p>
-        <div>
-          <HabitList perfectScore = {this.perfectScore} perfectScoreStatus = {this.state.perfectScoreStatus}/>
+        <h2 className = "habit-tracker-text">Habit Tracker</h2>
+        <p className = "welcome-text-main">Welcome, {this.props.name}.{encouragingMessage}</p>
+          <div>
+            <HabitList perfectScore = {this.perfectScore} perfectScoreStatus = {this.state.perfectScoreStatus}/>
+          </div>
         </div>
-      </div>
-      <SillyQuote className="silly-quote-flex"/>
+        <SillyQuote />
     </div>
     )
   }

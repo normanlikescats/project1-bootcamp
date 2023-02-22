@@ -13,6 +13,7 @@
 
 .welcome-text{
   color:#290a53;
+  font-size: 10vh;
 }
 
 .username-box {
@@ -22,6 +23,8 @@
   border-bottom: dashed 2px #290a53;
   text-align: center;
   color: #290a53;
+  min-width: 25vw;
+  font-size: 1.2rem;
 }
 
 .username-box:focus{
@@ -30,7 +33,7 @@
 
 .username-box::placeholder {
   color: #290a53;
-  opacity:0.4;
+  opacity:0.5;
 }
 
 .username-box:focus::placeholder {
@@ -41,13 +44,16 @@
   background-color: #290a53;
   color: #aacefa;
   border: solid 2px transparent;
-  border-radius: 8px;
+  border-radius: 10px;
+  margin-top: 5px;
   transition: 0.5s;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 12px;
+  padding-left: 12px;
+  font-size: 3.5vh;
 }
+
 
 .username-button:hover{
   background-color: transparent;
@@ -55,3 +61,8 @@
   border: solid 2px #290a53;
 }
 
+@media screen and (max-width: 600px) {
+  .welcome-text {
+    font-size: 15vh;
+  }
+}

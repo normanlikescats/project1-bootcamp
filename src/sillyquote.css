@@ -1,0 +1,9 @@
+
+.silly-quote-flex {
+  padding: 30px 0px 0px 0px;
+  opacity: 0.5;
+  max-width: 70vw;
+  display:flex;
+  margin:auto;
+  justify-content: center;
+}

@@ -68,6 +68,7 @@
   border-bottom: 2px dashed #aacefa;
   box-shadow: none;
   border-radius: 5px;
+  max-width: 35vw;
   align-self: center;
 }
 

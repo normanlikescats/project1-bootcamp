@@ -1,4 +1,5 @@
 import React from 'react';
+import './sillyquote.css';
 
 export default class SillyQuote extends React.Component{  
   constructor(props){
